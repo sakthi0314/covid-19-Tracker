@@ -1,0 +1,23 @@
+// Font weight
+$font-weight: (
+  "light": 300,
+  "medium": 500,
+  "bold": 700,
+);
+
+// Colors for light versions
+$colors: (
+  "colorDark": rgb(35, 41, 49),
+  "colorWhite": rgb(255, 255, 255),
+  "colorPrimary": rgb(63, 175, 154),
+  "colorGrey": rgb(57, 62, 70),
+  "colorLight": rgb(238, 238, 238),
+  "colorDarkGrey": rgb(45, 52, 61),
+);
+
+// Font size
+$font-size: (
+  "font-md": 2rem,
+  "font-xsm": 1.4rem,
+  "font-sm": 1.6rem,
+);

@@ -1,0 +1,44 @@
+@import "../../Styles/mixins";
+@import "../../Styles/variables";
+
+.liveCases {
+  overflow-x: hidden;
+  overflow-y: scroll;
+  height: 40rem;
+
+  /* width */
+  &::-webkit-scrollbar {
+    width: 10px;
+  }
+
+  /* Track */
+  &::-webkit-scrollbar-track {
+    background: #6b6b6b;
+    border-radius: 10px;
+  }
+
+  /* Handle */
+  &::-webkit-scrollbar-thumb {
+    background: map-get($colors, colorPrimary);
+
+    border-radius: 10px;
+  }
+
+  &__title {
+    font-size: map-get($font-size, font-md);
+    margin-bottom: 2vh;
+    text-transform: uppercase;
+  }
+
+  &__row {
+    @include flexbox(row, space-between, center);
+
+    td {
+      padding: 0.5rem 1rem;
+    }
+
+    &:nth-of-type(odd) {
+      background-color: map-get($colors, colorGrey);
+    }
+  }
+}

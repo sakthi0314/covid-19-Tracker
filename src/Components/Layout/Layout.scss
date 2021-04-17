@@ -1,0 +1,39 @@
+@import "../../Styles/variables";
+@import "../../Styles/mixins";
+
+.layout {
+  padding: 0 1rem;
+
+  &__container {
+    display: flex;
+    max-width: 130rem;
+    margin: 0 auto;
+
+    @include for-tablet {
+      flex-direction: column;
+    }
+  }
+}
+
+.one {
+  flex-basis: 70%;
+  background-color: map-get($colors, colorDarkGrey);
+  padding: 2rem;
+  border-radius: 0.4rem;
+  margin-right: 1vw;
+
+  @include for-tablet {
+    flex-basis: 100%;
+  }
+}
+
+.two {
+  flex-basis: 30%;
+  padding: 2rem;
+  border-radius: 0.4rem;
+  background-color: map-get($colors, colorDarkGrey);
+
+  @include for-tablet {
+    flex-basis: 100%;
+  }
+}

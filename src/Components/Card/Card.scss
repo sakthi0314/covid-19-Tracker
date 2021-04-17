@@ -1,0 +1,42 @@
+@import "../../Styles/variables";
+@import "../../Styles/mixins";
+
+.card {
+  cursor: pointer;
+  display: inline-block;
+  margin-right: 1rem;
+
+  &__content {
+    background-color: map-get($colors, colorGrey);
+    border-radius: 0.5rem;
+    padding: 1rem 2rem;
+    height: 10rem;
+    @include flexbox(row, space-evenly, center);
+    @include for-phone {
+      padding: 1rem;
+    }
+  }
+
+  &__icon {
+    font-size: 4rem;
+    margin-right: 2vw;
+  }
+
+  &__title {
+    font-size: map-get($font-size, font-md);
+    font-weight: map-get($font-weight, bold);
+    color: map-get($colors, colorLight);
+    @include for-tablet {
+      font-size: map-get($font-size, font-sm);
+    }
+  }
+
+  &__cases {
+    font-size: map-get($font-size, font-sm);
+    margin: 0.5vh 0;
+  }
+
+  &__total {
+    font-size: map-get($font-weight, font-xsm);
+  }
+}

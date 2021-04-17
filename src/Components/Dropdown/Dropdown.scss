@@ -1,0 +1,37 @@
+@import "../../Styles/animations";
+@import "../../Styles/variables";
+@import "../../Styles/mixins";
+
+.dropdown {
+  &__container {
+    max-width: 130rem;
+    margin: 0 auto;
+  }
+
+  &__title {
+    font-size: map-get($font-size, font-md);
+    font-weight: map-get($font-weight, medium);
+    text-transform: capitalize;
+    margin-bottom: 2vh;
+    cursor: pointer;
+  }
+}
+
+select {
+  cursor: pointer;
+  font-size: map-get($font-size, font-sm);
+  width: 15rem;
+  height: 5rem;
+  padding: 1rem;
+  border-radius: 0.5rem;
+  background-color: map-get($colors, colorGrey);
+  outline: none;
+  border: none;
+  color: map-get($colors, colorLight);
+  appearance: none;
+  border-bottom: 4px solid map-get($colors, colorPrimary);
+
+  option {
+    font-weight: map-get($font-weight, medium) !important;
+  }
+}

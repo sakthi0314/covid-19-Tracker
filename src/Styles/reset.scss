@@ -1,0 +1,46 @@
+@import "../Styles/variables.scss";
+@import "../Styles/mixins.scss";
+
+* {
+  padding: 0%;
+  margin: 0%;
+  box-sizing: inherit;
+}
+
+html {
+  box-sizing: border-box;
+  font-size: 62.5%;
+
+  @include for-tablet {
+    font-size: 46%;
+  }
+}
+
+body {
+  font-family: "Montserrat", sans-serif;
+  font-size: 1.6rem;
+  color: map-get($colors, colorWhite);
+  background-color: map-get($colors, colorDark);
+}
+
+a,
+button,
+input {
+  text-decoration: none;
+  outline: none;
+  border: none;
+
+  &:active {
+    outline: none;
+    border: none;
+  }
+
+  &:focus {
+    outline: none;
+    border: none;
+  }
+}
+
+ul {
+  list-style: none;
+}
