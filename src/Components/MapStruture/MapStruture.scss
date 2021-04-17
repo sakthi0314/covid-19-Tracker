@@ -10,3 +10,25 @@
     border-radius: 0.5rem;
   }
 }
+
+.info {
+  &__name {
+  }
+
+  &__flag {
+    height: 3rem;
+    width: 4rem;
+    background-size: cover;
+    background-position: center center;
+    margin-bottom: 1vh;
+  }
+
+  &__cases {
+  }
+
+  &__recover {
+  }
+
+  &__death {
+  }
+}

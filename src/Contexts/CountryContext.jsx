@@ -7,17 +7,10 @@ export const CountryProvider = (props) => {
   const [country, setCountry] = useState("worldwide");
   const [detail, setDetail] = useState({});
   const [tableData, setTableDate] = useState([]);
-  const [mapPosition, setMapPosition] = useState([]);
-
-  const getLocation = () => {
-    navigator.geolocation.getCurrentPosition((position) => {
-      setMapPosition([position.coords.latitude, position.coords.longitude]);
-    });
-  };
-
-  useEffect(() => {
-    getLocation();
-  }, []);
+  const [lat, setLat] = useState(13.0827);
+  const [long, setLong] = useState(80.2707);
+  const [zoom, setzoom] = useState(3);
+  const [mapCountries, setMapCountries] = useState([]);
 
   useEffect(() => {
     // Fetch Countries data
@@ -28,15 +21,19 @@ export const CountryProvider = (props) => {
           : `https://disease.sh/v3/covid-19/countries/${country}`;
       const { data } = await axios.get(url);
       setDetail(data);
+      setLat(data.countryInfo?.lat);
+      setLong(data.countryInfo?.long);
+      setzoom(13);
     };
 
     fetchDetails();
-  }, [country]);
+  }, [country, lat, long]);
 
   useEffect(() => {
     const fetchTableData = async () => {
       const { data } = await axios.get("/countries");
       setTableDate(data);
+      setMapCountries(data);
     };
     fetchTableData();
   }, []);
@@ -52,7 +49,10 @@ export const CountryProvider = (props) => {
         onCountryChange: onCountryChange,
         detail: detail,
         tableData: tableData,
-        mapPosition: mapPosition,
+        zoom: zoom,
+        lat: lat,
+        long: long,
+        mapCountries: mapCountries,
       }}
     >
       {props.children}

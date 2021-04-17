@@ -1,4 +1,5 @@
 import React from "react";
+import numeral from "numeral";
 import "./Card.scss";
 
 function Card({ title, cases, total, color, icon }) {
@@ -10,8 +11,8 @@ function Card({ title, cases, total, color, icon }) {
         </div>
         <div className='card__info'>
           <p className='card__title'>{title}</p>
-          <p className='card__cases'>+{cases}</p>
-          <p className='card__total'>{total}</p>
+          <p className='card__cases'>+{numeral(cases).format("0,0")}</p>
+          <p className='card__total'>{numeral(total).format("0,0")}</p>
         </div>
       </div>
     </div>
