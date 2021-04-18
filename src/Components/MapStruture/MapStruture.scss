@@ -1,3 +1,6 @@
+@import "../../Styles/variables";
+@import "../../Styles/mixins";
+
 .map {
   height: 50rem;
   background-color: #fff;
@@ -13,11 +16,13 @@
 
 .info {
   &__name {
+    font-weight: map-get($font-weight, bold);
   }
 
   &__flag {
-    height: 3rem;
-    width: 4rem;
+    height: 4rem;
+    width: 7rem;
+    border-radius: 0.3rem;
     background-size: cover;
     background-position: center center;
     margin-bottom: 1vh;
@@ -27,6 +32,7 @@
   }
 
   &__recover {
+    margin: 0.2vh 0;
   }
 
   &__death {

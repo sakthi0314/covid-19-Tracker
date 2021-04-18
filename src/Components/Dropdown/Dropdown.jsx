@@ -2,11 +2,14 @@ import React, { useContext, useEffect, useState } from "react";
 import axios from "../../Services/axios";
 import { CountryContext } from "../../Contexts/CountryContext";
 import "./Dropdown.scss";
+import { Link, useHistory } from "react-router-dom";
+import { useAuth } from "../../Contexts/AuthContext";
 
 function Dropdown() {
   const [countries, setCountries] = useState([]);
   const { country, onCountryChange } = useContext(CountryContext);
-
+  const { logout } = useAuth();
+  const history = useHistory();
   // Fetch Countries
   const fetchCountries = async () => {
     const { data } = await axios.get("/countries");
@@ -16,6 +19,11 @@ function Dropdown() {
     }));
     setCountries(countriesInfo);
   };
+
+  async function handleLogout() {
+    await logout();
+    history.push("/login");
+  }
 
   useEffect(() => {
     fetchCountries();
@@ -32,6 +40,9 @@ function Dropdown() {
             </option>
           ))}
         </select>
+        <button className='navbar__btn' onClick={handleLogout}>
+          Logout
+        </button>
       </div>
     </div>
   );

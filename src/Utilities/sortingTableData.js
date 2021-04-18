@@ -30,9 +30,10 @@ const casesTypeColors = {
 
 // Drawing circle
 export const showDataOnMap = (data, casesType = "cases") => {
-  return data.map((country) => {
+  return data.map((country, id) => {
     return (
       <Circle
+        key={id}
         center={[country.countryInfo.lat, country.countryInfo.long]}
         fillColor={casesTypeColors.casesTypes.hex}
         color={casesTypeColors.casesTypes.hex}
@@ -48,7 +49,7 @@ export const showDataOnMap = (data, casesType = "cases") => {
               style={{ backgroundImage: `url(${country.countryInfo.flag})` }}
             />
             <div className='info__name'>{country.country}</div>
-            <div className='cases'>
+            <div className='info__cases'>
               Cases: {numeral(country.cases).format("0,0")}
             </div>
             <div className='info__recover'>

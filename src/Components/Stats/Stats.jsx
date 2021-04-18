@@ -18,14 +18,14 @@ function Stats() {
         title='Recovered'
         cases={detail?.todayRecovered}
         total={detail?.recovered}
-        color='lime'
+        color='#36a2eb'
         icon='fa-smile-wink'
       />
       <Card
         title='Deaths'
         cases={detail?.todayDeaths}
         total={detail?.deaths}
-        color='#ef3434'
+        color='rgba(255,99,132,1)'
         icon='fa-sad-tear'
       />
     </div>

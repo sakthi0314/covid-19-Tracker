@@ -11,6 +11,11 @@
     border-radius: 0.5rem;
     padding: 1rem 2rem;
     height: 10rem;
+
+    @include for-phone {
+      padding: 1rem;
+    }
+
     @include flexbox(row, space-evenly, center);
     @include for-phone {
       padding: 1rem;
@@ -20,6 +25,10 @@
   &__icon {
     font-size: 4rem;
     margin-right: 2vw;
+
+    @include for-phone {
+      font-size: 3rem;
+    }
   }
 
   &__title {

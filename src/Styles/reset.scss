@@ -44,3 +44,13 @@ input {
 ul {
   list-style: none;
 }
+
+.link {
+  text-decoration: none;
+  color: map-get($colors, colorWhite) !important;
+  padding-left: 0.3vw;
+
+  &:hover {
+    text-decoration: underline;
+  }
+}

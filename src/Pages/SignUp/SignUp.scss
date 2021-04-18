@@ -1,0 +1,86 @@
+@import "../../Styles/mixins";
+@import "../../Styles/variables";
+
+.signUp {
+  background-image: linear-gradient(
+      to bottom,
+      rgba(0, 0, 0, 0.4),
+      rgba(0, 0, 0, 0.8)
+    ),
+    url(../../Components/Assets/Cover.jpg);
+  min-height: 100vh;
+  background-size: cover;
+  background-position: center center;
+
+  &__container {
+    @include flexbox(row, center, center);
+    height: 100vh;
+  }
+
+  &__title {
+    font-size: 2rem;
+    margin-bottom: 2vh;
+    cursor: pointer;
+  }
+
+  &__form {
+    @include flexbox(column, center, center);
+    background-color: rgba(0, 0, 0, 0.3);
+    padding: 4rem 2rem;
+    border-radius: 0.4rem;
+  }
+
+  &__group {
+    @include flexbox(column, center, flex-start);
+  }
+
+  &__label {
+    font-size: map-get($font-size, font-sm);
+    margin-bottom: 0.6vh;
+  }
+
+  &__forget {
+    font-size: map-get($font-size, font-xsm);
+    padding: 1rem 0;
+  }
+  &__input {
+    width: 30rem;
+    padding: 1rem;
+    margin-bottom: 0.6vh;
+    border-radius: 0.2rem;
+    font-weight: map-get($font-weight, bold);
+
+    &:placeholder-shown {
+      font-weight: map-get($font-weight, bold);
+    }
+  }
+
+  &__error {
+    color: red;
+    font-size: 1.2rem;
+    width: 100%;
+    text-align: left;
+  }
+
+  &__btn {
+    padding: 1rem;
+    width: 100%;
+    background-color: map-get($colors, colorPrimary);
+    font-weight: map-get($font-weight, bold);
+    color: map-get($colors, colorWhite);
+    border-radius: 0.2rem;
+    margin: 1vh 0;
+    cursor: pointer;
+    transition: all 0.3s ease;
+
+    &:hover {
+      opacity: 0.8;
+    }
+  }
+}
+
+// color: "red",
+//               fontWeight: "500",
+//               fontSize: "1.3rem",
+//               textAlign: "left",
+//               width: "100%",

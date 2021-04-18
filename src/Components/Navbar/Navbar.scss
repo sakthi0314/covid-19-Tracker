@@ -4,9 +4,19 @@
 
 .navbar {
   padding: 2rem 1rem;
+  position: relative;
   background-color: map-get($colors, colorDark);
   box-shadow: 2px 5px 5px rgba(0, 0, 0, 0.205);
   margin-bottom: 2vh;
+
+  &__btn {
+    background-color: transparent;
+    font-size: map-get($font-size, font-sm);
+    padding: 0 1rem;
+    margin: 0;
+    font-weight: map-get($font-weight, bold);
+    color: map-get($colors, colorWhite);
+  }
 
   @include for-tablet {
     padding: 1.6rem 1rem;

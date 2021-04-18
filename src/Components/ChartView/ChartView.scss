@@ -1,0 +1,11 @@
+@import "../../Styles/variables";
+
+.chartView {
+  &__title {
+    color: map-get($colors, colorWhite);
+    text-transform: uppercase;
+    font-size: map-get($font-size, font-md);
+    margin-bottom: -2rem;
+    text-align: center;
+  }
+}

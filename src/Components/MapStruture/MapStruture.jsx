@@ -8,7 +8,7 @@ function MapStruture() {
   const { lat, long, zoom, mapCountries } = useContext(CountryContext);
   return (
     <div className='map'>
-      <MapContainer center={[lat, long]} zoom={zoom} scrollWheelZoom={false}>
+      <MapContainer center={[lat, long]} zoom={4} scrollWheelZoom={false}>
         <TileLayer
           attribution='&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
           url='https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png'
