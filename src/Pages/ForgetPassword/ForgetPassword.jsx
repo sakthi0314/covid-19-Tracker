@@ -4,21 +4,21 @@ import { useAuth } from "../../Contexts/AuthContext";
 
 function ForgetPassword() {
   const emailRef = useRef();
-  const { login } = useAuth();
+  const { resetPassword } = useAuth();
   const [error, setError] = useState("");
   const [loading, setLoading] = useState(false);
-  const history = useHistory();
-
+  const [message, setMessage] = useState("");
   async function handleSubmit(e) {
     e.preventDefault();
 
     try {
+      setMessage("");
       setError("");
       setLoading(true);
-      //   await login(emailRef.current.value);
-      history.push("/");
+      await resetPassword(emailRef.current.value);
+      setMessage("Check your inbox for futhere infomation");
     } catch {
-      setError("Failed to Log in");
+      setError("Failed to reset password");
     }
     setLoading(false);
   }
@@ -47,6 +47,7 @@ function ForgetPassword() {
             </Link>
           </div>
           <p className='signUp__error'>{error}</p>
+          <p className='signUp__message'>{message}</p>
         </form>
       </div>
     </div>
