@@ -1,5 +1,5 @@
 import React, { useRef, useState } from "react";
-import { Link, useHistory } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { useAuth } from "../../Contexts/AuthContext";
 
 function ForgetPassword() {
@@ -21,6 +21,7 @@ function ForgetPassword() {
       setError("Failed to reset password");
     }
     setLoading(false);
+    emailRef.current.value = "";
   }
 
   return (
@@ -35,6 +36,7 @@ function ForgetPassword() {
               className='signUp__input'
               placeholder='enter your email '
               ref={emailRef}
+              required
             />
           </div>
 

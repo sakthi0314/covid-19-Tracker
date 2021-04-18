@@ -1,6 +1,4 @@
 import React from "react";
-import Layout from "./Components/Layout/Layout";
-import Navbar from "./Components/Navbar/Navbar";
 import { AuthProvider } from "./Contexts/AuthContext";
 import { CountryProvider } from "./Contexts/CountryContext";
 import SignUp from "./Pages/SignUp/SignUp";

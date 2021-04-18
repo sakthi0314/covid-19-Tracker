@@ -50,6 +50,10 @@
     border-radius: 0.2rem;
     font-weight: map-get($font-weight, bold);
 
+    @include for-tablet {
+      font-size: map-get($font-size, font-xsm);
+    }
+
     &:placeholder-shown {
       font-weight: map-get($font-weight, bold);
     }

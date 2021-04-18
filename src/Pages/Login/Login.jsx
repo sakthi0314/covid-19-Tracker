@@ -36,6 +36,7 @@ function Login() {
               className='signUp__input'
               placeholder='enter your email '
               ref={emailRef}
+              required
             />
           </div>
 
@@ -46,6 +47,7 @@ function Login() {
               className='signUp__input'
               placeholder='password'
               ref={passwordRef}
+              required
             />
           </div>
 

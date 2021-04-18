@@ -41,6 +41,7 @@ function SignUp() {
               className='signUp__input'
               placeholder='enter your email '
               ref={emailRef}
+              required
             />
           </div>
 
@@ -51,6 +52,7 @@ function SignUp() {
               className='signUp__input'
               placeholder='password'
               ref={passwordRef}
+              required
             />
           </div>
 
@@ -61,6 +63,7 @@ function SignUp() {
               className='signUp__input'
               placeholder='confirm password'
               ref={confirmPasswordRef}
+              required
             />
           </div>
           <button type='submit' className='signUp__btn' disabled={loading}>

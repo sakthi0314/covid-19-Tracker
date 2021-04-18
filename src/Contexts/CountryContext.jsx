@@ -7,8 +7,6 @@ export const CountryProvider = (props) => {
   const [country, setCountry] = useState("worldwide");
   const [detail, setDetail] = useState({});
   const [tableData, setTableDate] = useState([]);
-  const [lat, setLat] = useState(13.0827);
-  const [long, setLong] = useState(80.2707);
   const [mapCountries, setMapCountries] = useState([]);
 
   useEffect(() => {
@@ -21,7 +19,7 @@ export const CountryProvider = (props) => {
     };
 
     fetchDetails();
-  }, [country, lat, long]);
+  }, [country]);
 
   useEffect(() => {
     const fetchTableData = async () => {
@@ -43,8 +41,6 @@ export const CountryProvider = (props) => {
         onCountryChange: onCountryChange,
         detail: detail,
         tableData: tableData,
-        lat: lat,
-        long: long,
         mapCountries: mapCountries,
       }}
     >

@@ -2,7 +2,7 @@ import React, { useContext, useEffect, useState } from "react";
 import axios from "../../Services/axios";
 import { CountryContext } from "../../Contexts/CountryContext";
 import "./Dropdown.scss";
-import { Link, useHistory } from "react-router-dom";
+import { useHistory } from "react-router-dom";
 import { useAuth } from "../../Contexts/AuthContext";
 
 function Dropdown() {
