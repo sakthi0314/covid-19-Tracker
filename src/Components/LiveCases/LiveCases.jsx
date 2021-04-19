@@ -1,6 +1,7 @@
 import React, { useContext } from "react";
 import CountryContext from "../../Contexts/CountryContext";
 import { sortData } from "../../Utilities/sortingTableData";
+import numeral from "numeral";
 import "./LiveCases.scss";
 
 function LiveCases() {
@@ -14,7 +15,7 @@ function LiveCases() {
           <tr key={id} className='liveCases__row'>
             <td>{country}</td>
             <td>
-              <strong>{cases}</strong>
+              <strong>{numeral(cases).format("0,0")}</strong>
             </td>
           </tr>
         ))
@@ -26,3 +27,7 @@ function LiveCases() {
 }
 
 export default LiveCases;
+
+{
+  /* <p className='card__total'>{numeral(total).format("0,0")}</p> */
+}

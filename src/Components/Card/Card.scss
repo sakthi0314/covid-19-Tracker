@@ -43,6 +43,7 @@
   &__cases {
     font-size: map-get($font-size, font-sm);
     margin: 0.5vh 0;
+    font-weight: map-get($font-weight, bold);
   }
 
   &__total {

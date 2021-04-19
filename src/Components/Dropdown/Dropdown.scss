@@ -35,3 +35,7 @@ select {
     font-weight: map-get($font-weight, medium) !important;
   }
 }
+
+.navbar__btn {
+  cursor: pointer;
+}

@@ -32,6 +32,11 @@ function SignUp() {
   return (
     <div className='signUp'>
       <div className='signUp__container'>
+        <button className='signUp__skip'>
+          <Link to='/demo' className='signUp__l'>
+            Skip Now
+          </Link>
+        </button>
         <form className='signUp__form' onSubmit={handleSubmit}>
           <h5 className='signUp__title'>Creating an account</h5>
           <div className='signUp__group'>

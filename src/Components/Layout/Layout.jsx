@@ -16,8 +16,8 @@ function Layout() {
           <MapStruture />
         </div>
         <div className='two'>
-          <LiveCases />
           <ChartView />
+          <LiveCases />
         </div>
       </div>
     </div>

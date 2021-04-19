@@ -7,22 +7,17 @@ import "./MapStruture.scss";
 function MapStruture() {
   const { mapCountries } = useContext(CountryContext);
 
-  const [location, setlocation] = useState([13.0711552, 80.2707]);
-  const getCurrentLoction = () => {
-    navigator.geolocation.getCurrentPosition((pos) => {
-      let lat = pos.coords.latitude;
-      let long = pos.coords.longitude;
-      setlocation([lat, long]);
-    });
-  };
+  // const [location, setlocation] = useState([13.0711552, 80.2707]);
+  let lat = 13.0711552;
+  let long = 80.2707;
 
   useEffect(() => {
-    getCurrentLoction();
+    // getRandomNum();
   }, []);
 
   return (
     <div className='map'>
-      <MapContainer center={location} zoom={4} scrollWheelZoom={false}>
+      <MapContainer center={[lat, long]} zoom={4} scrollWheelZoom={false}>
         <TileLayer
           attribution='&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
           url='https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png'

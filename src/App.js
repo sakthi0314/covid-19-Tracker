@@ -7,6 +7,7 @@ import Homepage from "./Pages/Homepage/Homepage";
 import Login from "./Pages/Login/Login";
 import PrivateRoute from "./Components/PrivateRoute/PrivateRoute";
 import ForgetPassword from "./Pages/ForgetPassword/ForgetPassword";
+import Demo from "./Pages/Demo/Demo";
 
 function App() {
   return (
@@ -18,6 +19,7 @@ function App() {
             <Route path='/login' component={Login} />
             <Route path='/forget-password' component={ForgetPassword} />
             <PrivateRoute path='/' exact component={Homepage} />
+            <Demo path='/demo' component={Demo} />
           </Switch>
         </CountryProvider>
       </AuthProvider>

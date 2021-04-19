@@ -1,6 +1,7 @@
 @import "../../Styles/variables";
 
 .chartView {
+  margin-bottom: 4vh;
   &__title {
     color: map-get($colors, colorWhite);
     text-transform: uppercase;

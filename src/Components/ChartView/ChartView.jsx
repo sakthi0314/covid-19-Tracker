@@ -12,11 +12,11 @@ function ChartView() {
       {
         label: "Deaths Today",
         data: [detail.todayCases, detail.todayRecovered, detail.todayDeaths],
-        backgroundColor: ["rgb(63, 175, 154)", "#36a2eb", "rgba(255,99,132,1)"],
+        backgroundColor: ["rgb(63, 175, 154)", "rgba(255,99,132,1)", "#36a2eb"],
       },
     ],
   };
-
+  //
   const options = {
     title: {
       display: true,

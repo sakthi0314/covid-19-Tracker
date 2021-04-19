@@ -1,5 +1,5 @@
 import React from "react";
-import numeral from "numeral";
+import { CountUp } from "use-count-up";
 import "./Card.scss";
 
 function Card({ title, cases, total, color, icon }) {
@@ -11,8 +11,24 @@ function Card({ title, cases, total, color, icon }) {
         </div>
         <div className='card__info'>
           <p className='card__title'>{title}</p>
-          <p className='card__cases'>+{numeral(cases).format("0,0")}</p>
-          <p className='card__total'>{numeral(total).format("0,0")}</p>
+          <p className='card__cases'>
+            <CountUp
+              isCounting
+              end={cases}
+              duration={3.2}
+              prefix={"+"}
+              thousandsSeparator=','
+              easing='easeOutCubic'
+            />
+          </p>
+          <p className='card__total'>
+            <CountUp
+              isCounting
+              end={total}
+              duration={3.2}
+              thousandsSeparator=','
+            />
+          </p>
         </div>
       </div>
     </div>
