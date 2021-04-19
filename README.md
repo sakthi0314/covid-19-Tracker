@@ -16,7 +16,7 @@ You will also see any lint errors in the console.
 
 I used this [disease.sh](https://disease.sh/) API for fetch Real time data.
 
-## Preview this project here 👉 [Covid-19 Tracker(React-js)](https://www.google.com/)
+## Preview this project here 👉 [Covid-19 Tracker(React-js)](https://covid-tracker-2021.netlify.app/)
 
 <br>
 
