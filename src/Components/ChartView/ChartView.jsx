@@ -1,32 +1,53 @@
 import React, { useContext } from "react";
-import { Doughnut } from "react-chartjs-2";
+import ReactApexChart from "react-apexcharts";
 import CountryContext from "../../Contexts/CountryContext";
 import "./ChartView.scss";
 
 function ChartView() {
-  const { detail } = useContext(CountryContext);
+  const { deaths, recovered, dates } = useContext(CountryContext);
 
-  const data = {
-    labels: ["Today Cases", "Today Deaths", "Today Recovered"],
-    datasets: [
-      {
-        label: "Deaths Today",
-        data: [detail.todayCases, detail.todayRecovered, detail.todayDeaths],
-        backgroundColor: ["rgb(63, 175, 154)", "rgba(255,99,132,1)", "#36a2eb"],
-      },
-    ],
-  };
-  //
+  const series = [
+    {
+      name: "Recovered",
+      data: [...recovered],
+    },
+    {
+      name: "Death",
+      data: [...deaths],
+    },
+  ];
+
   const options = {
-    title: {
-      display: true,
+    chart: {
+      height: 350,
+      type: "area",
+    },
+    dataLabels: {
+      enabled: false,
+    },
+    stroke: {
+      curve: "smooth",
+    },
+    xaxis: {
+      type: "datetime",
+      categories: [...dates],
+    },
+    tooltip: {
+      x: {
+        format: "dd/MM/yy HH:mm",
+      },
     },
   };
 
   return (
     <div className='chartView'>
       <h1 className='chartView__title'>Today statistics</h1>
-      <Doughnut data={data} options={options} width={30} height={30} />
+      <ReactApexChart
+        options={options}
+        series={series}
+        type='area'
+        height={350}
+      />
     </div>
   );
 }

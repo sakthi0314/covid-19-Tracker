@@ -8,6 +8,10 @@ export const CountryProvider = (props) => {
   const [detail, setDetail] = useState({});
   const [tableData, setTableDate] = useState([]);
   const [mapCountries, setMapCountries] = useState([]);
+  const [recovered, setRecovered] = useState([]);
+  const [dates, setDates] = useState([]);
+  const [deaths, setDeaths] = useState([]);
+  const [chartData, setChartData] = useState([]);
 
   useEffect(() => {
     // Fetch Countries data
@@ -34,6 +38,16 @@ export const CountryProvider = (props) => {
     setCountry(e.target.value);
   };
 
+  useEffect(() => {
+    const getHistory = async () => {
+      const { data } = await axios.get(`/historical/all?lastdays=10`);
+      setRecovered(Object.values(data.recovered));
+      setDates(Object.keys(data.cases));
+      setDeaths(Object.values(data.deaths));
+    };
+    getHistory();
+  }, []);
+
   return (
     <CountryContext.Provider
       value={{
@@ -42,6 +56,9 @@ export const CountryProvider = (props) => {
         detail: detail,
         tableData: tableData,
         mapCountries: mapCountries,
+        dates: dates,
+        recovered: recovered,
+        deaths: deaths,
       }}
     >
       {props.children}

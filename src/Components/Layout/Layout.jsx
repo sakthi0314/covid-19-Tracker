@@ -3,7 +3,6 @@ import LiveCases from "../LiveCases/LiveCases";
 import Stats from "../Stats/Stats";
 import MapStruture from "../MapStruture/MapStruture";
 import "./Layout.scss";
-import ChartView from "../ChartView/ChartView";
 
 function Layout() {
   return (
@@ -16,7 +15,6 @@ function Layout() {
           <MapStruture />
         </div>
         <div className='two'>
-          <ChartView />
           <LiveCases />
         </div>
       </div>
